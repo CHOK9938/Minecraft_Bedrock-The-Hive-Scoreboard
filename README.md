@@ -1,4 +1,4 @@
 # Minecraft_Bedrock-The-Hive-Scoreboard
 The Hive Server Scoreboard Texture Pack<br>
   Example picture<br>
-  ❮img src="image.png" ❯
+  ❮img src="image.png"❯
