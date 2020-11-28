@@ -1,0 +1,103 @@
+//               __    __   __  ____    ____  _______
+//              |  |  |  | |  | \   \  /   / |   ____|
+//              |  |__|  | |  |  \   \/   /  |  |__
+//              |   __   | |  |   \      /   |   __|
+//              |  |  |  | |  |    \    /    |  |____
+//              |__|  |__| |__|     \__/     |_______|
+//
+// COPYRIGHT (C) HIVE GAMES LIMITED 2020
+// https://playhive.com
+//
+// Hello, traveler. I see you're reverse-engineering the new Hive UI.
+// Although seemingly simple, this is has been a team effort and we'd
+// really appreciate it if you didn't copy/paste it.
+//
+// If you have an interest in this kind of work, we'd love to have you
+// on our team. Shoot us an email [jobs@playhive.com] if interested!
+{
+    "namespace": "scoreboard",
+
+    "scoreboard_sidebar": {
+        "type": "panel",
+        "size": ["100%c", 0],
+        "$scoreboard_offset|default": [-2, 5],
+        "$scoreboard_alignment": "top_right",
+        "offset": "$scoreboard_offset",
+        "anchor_from": "$scoreboard_alignment",
+        "anchor_to": "$scoreboard_alignment",
+        "ignored": "$scoreboards_feature_disabled",
+        "controls": [
+            {
+                "players": {
+                    "type": "stack_panel",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "size": ["100%c", "100%c"],
+                    "orientation": "horizontal",
+                    "collection_name": "scoreboard_players",
+                    "factory": {
+                        "name": "player_list_factory",
+                        "control_name": "scoreboard.hive_scoreboard_entry_final"
+                    },
+                    "bindings": [
+                        {
+                            "binding_name": "#scoreboard_sidebar_size",
+                            "binding_type": "global",
+                            "binding_name_override": "#collection_length"
+                        }
+                    ]
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#scoreboard_sidebar_visible",
+                "binding_type": "global",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "variables": [
+            {
+                "requires": "($pocket_screen)",
+                "$scoreboard_offset": [0, 20],
+                "$scoreboard_alignment": "top_middle"
+            }
+        ]
+    },
+
+    "hive_scoreboard_entry_final": {
+        "type": "panel",
+        "size": ["100%cm + 3px", "100%cm"],
+        "controls": [
+            {
+                "text": {
+                    "type": "label",
+                    "text": "#player_name_sidebar",
+                    "shadow": false,
+                    "layer": 2,
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "offset": [1, 3],
+                    "bindings": [
+                        {
+                            "binding_name": "#player_name_sidebar",
+                            "binding_type": "collection",
+                            "binding_collection_name": "scoreboard_players"
+                        }
+                    ]
+                }
+            },
+            {
+                "background": {
+                    "type": "image",
+                    "texture": "textures/ui/hive/hive_scoreboard_entry",
+                    "alpha": 0.55,
+                    "size": ["100%sm + 4px", "100%sm + 6px"],
+                    "offset": [0, 0],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left"
+                }
+            }
+        ]
+    }
+}

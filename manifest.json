@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "Hive UI",
+        "name": "Hive UI",
+        "uuid": "0e2d603a-3783-4261-a414-1bacb4d9dc58",
+        "version": [0, 0, 9],
+        "min_engine_version": [ 1, 16, 0 ]
+    },
+    "modules": [
+        {
+            "description": "Hive UI",
+            "type": "resources",
+            "uuid": "4328151d-377a-42e3-b28c-c3be53b3c8bd",
+            "version": [0, 0, 9]
+        }
+    ]
+}

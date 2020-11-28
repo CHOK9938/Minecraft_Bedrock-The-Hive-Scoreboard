@@ -1,0 +1,37 @@
+//               __    __   __  ____    ____  _______
+//              |  |  |  | |  | \   \  /   / |   ____|
+//              |  |__|  | |  |  \   \/   /  |  |__
+//              |   __   | |  |   \      /   |   __|
+//              |  |  |  | |  |    \    /    |  |____
+//              |__|  |__| |__|     \__/     |_______|
+//
+// COPYRIGHT (C) HIVE GAMES LIMITED 2020
+// https://playhive.com
+//
+{
+    // As resource pack creators often change the structure of the UI,
+    // we have to set the content back to the vanilla structure. This is
+    // because we can't override a single element (the scoreboard), as
+    // it is nested with in the root_screen.
+    //
+    // If you're a resource pack creator, we apologise for this override.
+    // When we work out a solution to keep modifications whilst only
+    // replacing the elements we want - we'll patch.
+    "hud_screen@common.base_screen": {
+        "$screen_content": "hud.hud_content"
+    },
+
+    // This moves the "ActionBar" text up slightly, so it does not conflict
+    // with the item names. As mobiles/pocket has different scale, we adjust it
+    // less on those devices
+    "hud_tip_text@hud.item_name_text": {
+        "$offset|default": [0, "50%-78px"],
+        "variables": [
+            {
+                "requires": "$pocket_screen",
+                "$offset": [0, "50%-55px"]
+            }
+        ],
+        "offset": "$offset"
+    }
+}

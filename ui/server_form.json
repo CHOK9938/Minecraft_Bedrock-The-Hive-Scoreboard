@@ -1,0 +1,21 @@
+//               __    __   __  ____    ____  _______
+//              |  |  |  | |  | \   \  /   / |   ____|
+//              |  |__|  | |  |  \   \/   /  |  |__
+//              |   __   | |  |   \      /   |   __|
+//              |  |  |  | |  |    \    /    |  |____
+//              |__|  |__| |__|     \__/     |_______|
+//
+// COPYRIGHT (C) HIVE GAMES LIMITED 2020
+// https://playhive.com
+//
+{
+    "namespace": "server_form",
+
+    "long_form@common_dialogs.main_panel_no_buttons": {
+        "size": [260, 210]
+    },
+
+    "custom_form@common_dialogs.main_panel_no_buttons": {
+        "size": [260, 210]
+    }
+}
